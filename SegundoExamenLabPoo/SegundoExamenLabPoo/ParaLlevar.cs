@@ -24,7 +24,7 @@ namespace SegundoExamenLabPoo
         private void button5_Click(object sender, EventArgs e)
         {
             Recibo();
-            Limpiar();
+            
         }
         private void Limpiar()
         {
@@ -45,6 +45,7 @@ namespace SegundoExamenLabPoo
             textBox3.Clear();
             textBox4.Clear();
             textBox5.Clear();
+            comboBox1.Text = "";
         }
         private void Recibo()
         {
@@ -59,9 +60,10 @@ namespace SegundoExamenLabPoo
                 (menucomida.GetItemChecked(0) == false & menucomida.GetItemChecked(1) == false &
                     menucomida.GetItemChecked(2) == false & menucomida.GetItemChecked(3) == false &
                     menucomida.GetItemChecked(4) == false & menucomida.GetItemChecked(5) == false &
-                    menucomida.GetItemChecked(6) == false & menucomida.GetItemChecked(7) == false)
+                    menucomida.GetItemChecked(6) == false & menucomida.GetItemChecked(7) == false||
+                    label1.Text == "$0.00" || label1.Text == "0.00")
             {
-                MessageBox.Show("No has ordenado nada, intenta con una pizza :D");
+                MessageBox.Show("No has ordenado nada, intenta con una pizza :D\n No olvides presionar el botón agregar para que tu orden sea válida");
             }
             //si todo esta en orden, procede a generar el recibo
             else
@@ -84,50 +86,51 @@ namespace SegundoExamenLabPoo
                 //cada if verifica si el cliente pidio algo y cuanto se le cobrara
                 if (menucomida.GetItemChecked(0) == true)
                 {
-                    cadena = cadena + $"{cantidad[0]}\tCombo de hamburguesa\t$5.60 c/u\t${cantidad[0] * 5.60}\n";
+                    cadena = cadena + $"{cantidad[0]}\tCombo de hamburguesa\t$5.60 c/u\t\t${cantidad[0] * 5.60}\n";
                 }
                 else { cadena = cadena + ""; }
                 if (menucomida.GetItemChecked(1) == true)
                 {
-                    cadena = cadena + $"{cantidad[1]}\tPizza con soda\t$7.00 c/u\t${cantidad[1] * 7.00}\n";
+                    cadena = cadena + $"{cantidad[1]}\tPizza con soda\t\t$7.00 c/u\t\t${cantidad[1] * 7.00}\n";
                 }
                 else { cadena = cadena + ""; }
                 if (menucomida.GetItemChecked(2) == true)
                 {
-                    cadena = cadena + $"{cantidad[2]}\tOrden de tacos\t$3.50 c/u\t${cantidad[2] * 3.5}\n";
+                    cadena = cadena + $"{cantidad[2]}\tOrden de tacos\t\t$3.50 c/u\t\t${cantidad[2] * 3.5}\n";
                 }
                 else { cadena = cadena + ""; }
                 if (menucomida.GetItemChecked(3) == true)
                 {
-                    cadena = cadena + $"{cantidad[3]}\tTorta con queso\t$5.10 c/u\t${cantidad[3] * 5.10}\n";
+                    cadena = cadena + $"{cantidad[3]}\tTorta con queso\t\t$5.10 c/u\t\t${cantidad[3] * 5.10}\n";
                 }
                 else { cadena = cadena + ""; }
                 if (menucomida.GetItemChecked(4) == true)
                 {
-                    cadena = cadena + $"{cantidad[4]}\tPapas fritas\t$1.25 c/u\t${cantidad[4] * 1.25}\n";
+                    cadena = cadena + $"{cantidad[4]}\tPapas fritas\t\t$1.25 c/u\t\t${cantidad[4] * 1.25}\n";
                 }
                 else { cadena = cadena + ""; }
                 if (menucomida.GetItemChecked(5) == true)
                 {
-                    cadena = cadena + $"{cantidad[5]}\tHot Dog\t$2.00 c/u\t${cantidad[5] * 2.00}\n";
+                    cadena = cadena + $"{cantidad[5]}\tHot Dog\t\t\t$2.00 c/u\t\t${cantidad[5] * 2.00}\n";
                 }
                 else { cadena = cadena + ""; }
                 if (menucomida.GetItemChecked(6) == true)
                 {
-                    cadena = cadena + $"{cantidad[6]}\tSoda\t$0.50 c/u\t${cantidad[6] * 0.50}\n";
+                    cadena = cadena + $"{cantidad[6]}\tSoda\t\t\t$0.50 c/u\t\t${cantidad[6] * 0.50}\n";
                 }
                 else { cadena = cadena + ""; }
                 if (menucomida.GetItemChecked(7) == true)
                 {
-                    cadena = cadena + $"{cantidad[7]}\tLicuado\t$0.75 c/u\t${cantidad[7] * 0.75}\n";
+                    cadena = cadena + $"{cantidad[7]}\tLicuado\t\t\t$0.75 c/u\t\t${cantidad[7] * 0.75}\n";
                 }
                 else { cadena = cadena + ""; }
                 //muestra el recibo ya hecho
                 MessageBox.Show(
                     $"\t\t\tOrden para llevar\t\t\t\n" +
                     $"Cliente: {nombre}\n Correo: {correo} || Número: {numero}\n" +
-                    $"{cadena}" + $"\t\t\t\t\t\t\t\t\t\tTotal a pagar:${label1.Text}\n" +
+                    $"\n{cadena}" + $"\t\t\t\t\t\t\t\t\t\t\t\t          Total a pagar: ${label1.Text}\n" +
                     $"\nGracias por comprar con nosotros, tu comida estará lista en la sucursal de {sucursal}", "Recibo");
+                Limpiar();
             }
         }
         private void button2_Click(object sender, EventArgs e)

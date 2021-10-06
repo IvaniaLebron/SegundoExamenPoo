@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ivani\\OneDrive\\Documentos\\POO\\SegundoExamenLabPoo\\SegundoExamenLabPoo\\SegundoExamenLabPoo.csproj",
+      "projectUniqueName": "C:\\Users\\ivani\\OneDrive\\Documentos\\POO\\SegundoExamenPoo\\SegundoExamenLabPoo\\SegundoExamenLabPoo\\SegundoExamenLabPoo.csproj",
       "projectName": "SegundoExamenLabPoo",
-      "projectPath": "C:\\Users\\ivani\\OneDrive\\Documentos\\POO\\SegundoExamenLabPoo\\SegundoExamenLabPoo\\SegundoExamenLabPoo.csproj",
+      "projectPath": "C:\\Users\\ivani\\OneDrive\\Documentos\\POO\\SegundoExamenPoo\\SegundoExamenLabPoo\\SegundoExamenLabPoo\\SegundoExamenLabPoo.csproj",
       "packagesPath": "C:\\Users\\ivani\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ivani\\OneDrive\\Documentos\\POO\\SegundoExamenLabPoo\\SegundoExamenLabPoo\\obj\\",
+      "outputPath": "C:\\Users\\ivani\\OneDrive\\Documentos\\POO\\SegundoExamenPoo\\SegundoExamenLabPoo\\SegundoExamenLabPoo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ivani\\AppData\\Roaming\\NuGet\\NuGet.Config",

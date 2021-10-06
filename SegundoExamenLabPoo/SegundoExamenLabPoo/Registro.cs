@@ -45,6 +45,13 @@ namespace SegundoExamenLabPoo
             txtsoda.Text = "0";
             txtlicuado.Text = "0";
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+          //para que no se acumule el precio de las ordenes anteriores al ya haber registrado una orden
+            precio = 0;
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
             Agregar();
