@@ -19,6 +19,7 @@ namespace SegundoExamenLabPoo
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //activa el boton salir para confirmar que se quiere salir de la app
             if (MessageBox.Show("¿Desea salir de la aplicacion?", "Aviso", MessageBoxButtons.YesNo,
                MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == DialogResult.Yes)
             {

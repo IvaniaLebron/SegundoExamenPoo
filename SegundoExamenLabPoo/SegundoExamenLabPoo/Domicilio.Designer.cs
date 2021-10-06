@@ -43,15 +43,7 @@ namespace SegundoExamenLabPoo
             // 
             // menucomida
             // 
-            this.menucomida.Items.AddRange(new object[] {
-            "Combo de hamburguesa......$5.60",
-            "Pizza con soda......$7.00",
-            "Orden de tacos......$3.50",
-            "Torta con queso......$5.10",
-            "Papas fritas......$1.25",
-            "Hot Dog......$2.00",
-            "Soda......$0.50",
-            "Licuado......$0.75"});
+            
             // 
             // button2
             // 

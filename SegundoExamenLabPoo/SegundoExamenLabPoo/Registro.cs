@@ -10,11 +10,13 @@ namespace SegundoExamenLabPoo
 {
     public partial class Registro : Base
     {
+        //los mismos valores tendra en domicilio y para llevar
         double precio=0;
         double ham=5.60, pizza=7.00, taco=3.5, torta=5.10, papas=1.25, hotdog=2.00, soda=0.50, licuado=0.75;
 
         private void button4_Click(object sender, EventArgs e)
         {
+            //vuelve al menu
             Menu volver = new Menu();
             volver.Show();
             this.Close();
@@ -22,28 +24,38 @@ namespace SegundoExamenLabPoo
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Limpiar();
+           
+        }
+        private void Limpiar()
+        {
+            //devuelve todo a su estado actual
             label1.Text = "$0.00";
             precio = 0;
             for (int i = 0; i < menucomida.Items.Count; i++)
             {
                 menucomida.SetItemChecked(i, false);
             }
-            txtham.Text="0";
-            txtpizza.Text="0";
-            txttaco.Text="0";
-            txttorta.Text="0";
-            txtpapa.Text="0";
-            txthotdog.Text="0";
-            txtsoda.Text="0";
-            txtlicuado.Text="0";
-           
+            txtham.Text = "0";
+            txtpizza.Text = "0";
+            txttaco.Text = "0";
+            txttorta.Text = "0";
+            txtpapa.Text = "0";
+            txthotdog.Text = "0";
+            txtsoda.Text = "0";
+            txtlicuado.Text = "0";
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Agregar();
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Agregar()
         {
             label1.Text = "";
             int canham, canpizza, cantaco, cantorta, canpapas, canhtodog, cansoda, canlic;
-            
+
             canham = Convert.ToInt32(txtham.Text);
             canpizza = Convert.ToInt32(txtpizza.Text);
             cantaco = Convert.ToInt32(txttaco.Text);
@@ -52,7 +64,7 @@ namespace SegundoExamenLabPoo
             canhtodog = Convert.ToInt32(txthotdog.Text);
             cansoda = Convert.ToInt32(txtsoda.Text);
             canlic = Convert.ToInt32(txtlicuado.Text);
-
+            //para sacar el precio total de lo que el cliente pidio
             precio = precio + ham * canham;
             precio = precio + pizza * canpizza;
             precio = precio + taco * cantaco;
@@ -61,11 +73,9 @@ namespace SegundoExamenLabPoo
             precio = precio + hotdog * canhtodog;
             precio = precio + soda * cansoda;
             precio = precio + licuado * canlic;
-          
-            label1.Text = Convert.ToString(Math.Round(precio,2));
 
+            label1.Text = Convert.ToString(Math.Round(precio, 2));
         }
-
         public Registro()
         {
             InitializeComponent();
@@ -73,6 +83,12 @@ namespace SegundoExamenLabPoo
 
         private void Registro_Load(object sender, EventArgs e)
         {
+
+            Items();
+        }
+        private void Items()
+        {
+            //agrega items a la lista
             menucomida.Items.Add("Combo de hamburguesa......$5.60");
             menucomida.Items.Add("Pizza con soda......$7.00");
             menucomida.Items.Add("Orden de tacos......$3.50");
@@ -81,9 +97,7 @@ namespace SegundoExamenLabPoo
             menucomida.Items.Add("Hot Dog......$2.00");
             menucomida.Items.Add("Soda......$0.50");
             menucomida.Items.Add("Licuado......$0.75");
-
         }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -92,6 +106,7 @@ namespace SegundoExamenLabPoo
 
         private void menucomida_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //cada if else verifica si hay alguna orden seleccionada o no, asi por defecto pone la cantidad de 1
             if (menucomida.SelectedIndex == 0)
             {
                 if (menucomida.GetItemChecked(0) == true)
